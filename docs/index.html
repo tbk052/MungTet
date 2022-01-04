@@ -18,7 +18,7 @@
     </div>
 
     <!-- setup our canvas element -->
-    <canvas id="canvas">Canvas is not supported in your browser.</canvas>
+    <canvas id="canvas" style="background: url('src/img/back2.jpg')">Canvas is not supported in your browser.</canvas>
     <div>
         <audio id="autoplay" loop autoplay>
             <source src="src/music/music2.mp3 ">
