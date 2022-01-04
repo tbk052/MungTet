@@ -1,37 +1,69 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html>
 
-You can use the [editor on GitHub](https://github.com/tbk052/MungTet/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+<head>
+    <meta charset="utf-8">
+    <title>Tết!!!</title>
+    <link rel="stylesheet" href="src/css/default.css">
+    <link rel="stylesheet" href="src/css/noite.css">
+</head>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<body>
+    <div id="countdown">
+        <p id="days "></p>
+        <p id="hours "></p>
+        <p id="mins "></p>
+        <p id="secs "></p>
+        <h2 id="end "></h2>
+    </div>
 
-### Markdown
+    <!-- setup our canvas element -->
+    <canvas id="canvas">Canvas is not supported in your browser.</canvas>
+    <div>
+        <audio id="autoplay" loop autoplay>
+            <source src="src/music/music2.mp3 ">
+        <!-- <source src="src/music/music1.mp3 "> -->
+        </audio>
+    </div>
+    <div id="sound"></div>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    <script type="text/javascript " src="src/js/status.js "></script>
+    <script>
+        // The data/time we want to countdown to
+        var countDownDate = new Date(" Feb 1, 2022 00:00:00 ").getTime();
 
-```markdown
-Syntax highlighted code block
+        // Run myfunc every second
+        var myfunc = setInterval(function() {
 
-# Header 1
-## Header 2
-### Header 3
+            var now = new Date().getTime();
+            var timeleft = countDownDate - now;
 
-- Bulleted
-- List
+            // Calculating the days, hours, minutes and seconds left
+            var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-1. Numbered
-2. List
+            // Result is output to the specific element
+            document.getElementById("days ").innerHTML = "Còn " + days + " ngày "
+            document.getElementById("hours ").innerHTML = hours + " giờ "
+            document.getElementById("mins ").innerHTML = minutes + " phút "
+            document.getElementById("secs ").innerHTML = seconds + " giây cho tới năm mới ^^ "
 
-**Bold** and _Italic_ and `Code` text
+            // Display the message when countdown is over
+            if (timeleft < 0) {
+                clearInterval(myfunc);
+                document.getElementById("days ").innerHTML = " "
+                document.getElementById("hours ").innerHTML = " "
+                document.getElementById("mins ").innerHTML = " "
+                document.getElementById("secs ").innerHTML = " "
+                document.getElementById("end ").innerHTML = "CHÚC MỪNG NĂM MỚI!! ";
+            }
+        }, 1000);
 
-[Link](url) and ![Image](src)
-```
+        //document.getElementById('autoplay').play();
+    </script>
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+</body>
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tbk052/MungTet/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</html>
