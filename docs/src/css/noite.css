@@ -7,14 +7,14 @@
     canvas {
         display: block;
     }
-    /* #countdown {
+    #countdown {
         margin-top: 0px;
         margin: 0;
         height: 50px;
         padding: 0;
         display: inline-block;
         margin-left: 42%;
-    } */
+    }
     
     p {
         font-family: Arial, Helvetica, sans-serif;
