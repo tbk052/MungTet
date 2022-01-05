@@ -21,7 +21,7 @@
     <canvas id="canvas" style="background: url('src/img/back2.jpg')">Canvas is not supported in your browser.</canvas>
     <div>
         <audio id="autoplay" loop autoplay>
-            <source src="src/music/music2.mp3 ">
+            <source src="src/music/music5.mp3 ">
         <!-- <source src="src/music/music1.mp3 "> -->
         </audio>
     </div>
